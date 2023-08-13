@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <th:block th:replace="~{fragments/meta}"></th:block>
+<!--    config layout title pattern-->
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Sen</title>
+    <th:block th:replace="~{fragments/style}"></th:block>
+</head>
+<body>
+<!-- Header fragment -->
+<div th:replace="~{fragments/header}"></div>
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-4" th:insert="~{fragments/sidebar}">
+            <!-- Sidebar fragment-->
+        </div>
+        <div class="col-8">
+<!--            Child layout rendering-->
+            <div layout:fragment="webChildLayout" >
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{fragments/footer}"></div>
+<!-- Footer fragment-->
+<div th:replace="~{fragments/script}"></div>
+
+</body>
+</html>

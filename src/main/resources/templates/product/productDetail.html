@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/webLayout}">
+<head>
+    <title>Product detail</title>
+</head>
+<body>
+<div layout:fragment="webChildLayout" >
+    <section th:if="${product != null}">
+        <h1> Product Detail</h1>
+        <hr>
+        <h2 th:text="${product.name}">Product Name</h2>
+        <h2 th:text="${product.price}">Product Price</h2>
+        <p th:text="${product.description}">Product Description</p>
+    </section>
+    <section th:if="${product == null}">
+        <h1>There is no product</h1>
+    </section>
+</div>
+</body>
+</html>

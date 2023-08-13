@@ -1,0 +1,10 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">
+            Product Management
+        </span>
+        <span th:unless="${isAdmin == true}" class="bg-danger p-2 text-white">
+            Admin
+        </span>
+    </div>
+</nav>

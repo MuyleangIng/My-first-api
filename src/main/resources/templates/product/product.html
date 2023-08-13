@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layouts/webLayout}">
+<head>
+    <title>Product</title>
+</head>
+<body>
+    <div layout:fragment="webChildLayout">
+        <div class="row">
+            <div class="col-12">
+                <div class="row g-3">
+                    <div class="col-4"
+                         th:each="product : ${products}"
+                         th:object="${product}">
+                        <div th:replace="~{fragments/card :: cardLink(*{id},*{name},*{description},*{price})}"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <table class="table table-striped ">
+                    <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="product : ${products}">
+                        <th th:text="${product.id}" scope="row"></th>
+                        <td th:text="${product.name}">Mark</td>
+                        <td th:text="${product.description}">Otto</td>
+                        <td th:text="${product.price}">@mdo</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
