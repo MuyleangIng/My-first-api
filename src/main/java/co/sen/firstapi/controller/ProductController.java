@@ -65,5 +65,9 @@ public class ProductController {
 
         return "product/productDetail";
     }
+    @GetMapping("/product/create")
+    public String viewProductForm(){
+        return "product/productForm";
+    }
 }
 
